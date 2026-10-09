@@ -1,12 +1,13 @@
 <script lang="ts">
 	import KeepDemo from '#lib/components/KeepDemo.svelte';
-	import { base } from '$app/paths';
 
 	let activeFaqIndex = $state<number | null>(null);
 
 	function toggleFaq(index: number) {
 		activeFaqIndex = activeFaqIndex === index ? null : index;
 	}
+
+	const base = "/side-notes-docs/"
 
 	const faqs = [
 		{
@@ -87,7 +88,7 @@
 				</a>
 
 				<a
-					href="/privacy"
+					href="{base}/privacy"
 					class="inline-flex items-center gap-1.5 rounded-full px-5 py-3.5 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
 				>
 					<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -345,7 +346,7 @@
 			</div>
 
 			<div class="mt-8 text-center">
-				<a href="/privacy" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400">
+				<a href="{base}/privacy" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400">
 					<span>Read our complete, legally binding Privacy Policy</span>
 					<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
 				</a>
@@ -360,7 +361,7 @@
 		<div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
 			<div class="rounded-3xl border border-zinc-200/80 bg-gradient-to-tr from-amber-500/10 via-amber-400/5 to-blue-500/10 p-8 sm:p-14 dark:border-zinc-800 dark:from-amber-950/30 dark:to-zinc-900">
 				<div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-400 shadow-md">
-					<img src="/icon.png" alt="SideNote Logo" class="h-10 w-10 object-contain" />
+					<img src="{base}/icon.png" alt="SideNote Logo" class="h-10 w-10 object-contain" />
 				</div>
 
 				<h2 class="mt-6 text-3xl font-extrabold text-zinc-950 sm:text-4xl dark:text-white">

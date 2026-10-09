@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { base } from '$app/paths';
-
 	interface Props {
 		currentPath?: string;
 	}
+
+	const base = "/side-notes-docs/"
 
 	let { currentPath = '/side-notes-docs/' }: Props = $props();
 	let isMobileMenuOpen = $state(false);
@@ -20,7 +20,7 @@
 <header class="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/80 backdrop-blur-md transition-colors dark:border-zinc-800 dark:bg-zinc-950/80">
 	<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 		<!-- Brand Logo -->
-		<a href="{base}/side-notes-docs/" class="flex items-center gap-3 group transition-transform hover:scale-[1.02]" onclick={closeMenu}>
+		<a href="{base}/" class="flex items-center gap-3 group transition-transform hover:scale-[1.02]" onclick={closeMenu}>
 			<div class="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-tr from-amber-400 to-amber-200 shadow-sm ring-1 ring-amber-500/20">
 				<img src="{base}/icon.png" alt="SideNote Logo" class="h-8 w-8 object-contain" />
 			</div>
