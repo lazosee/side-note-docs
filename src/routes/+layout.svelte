@@ -3,13 +3,14 @@
 	import Navbar from '#lib/components/Navbar.svelte';
 	import Footer from '#lib/components/Footer.svelte';
 	import { page } from '$app/state';
+	import { base } from '$app/paths';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
 </script>
 
 <svelte:head>
-	<link rel="icon" type="image/png" href="/icon.png" />
+	<link rel="icon" type="image/png" href="{base}/icon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>SideNote — Clean Notes & Voice Memos in Chrome Side Panel</title>
 	<meta

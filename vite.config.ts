@@ -3,6 +3,9 @@ import adapter from '@sveltejs/adapter-static';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
+const envBasePath = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env?.BASE_PATH;
+const basePath = envBasePath && envBasePath.startsWith('/') ? (envBasePath as `/${string}`) : '';
+
 export default defineConfig({
 	plugins: [
 		tailwindcss(),
@@ -12,7 +15,10 @@ export default defineConfig({
 				runes: ({ filename }) =>
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
-			adapter: adapter()
+			adapter: adapter(),
+			paths: {
+				base: basePath
+			}
 		})
 	]
 });

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import KeepDemo from '#lib/components/KeepDemo.svelte';
+	import { base } from '$app/paths';
 
 	let activeFaqIndex = $state<number | null>(null);
 

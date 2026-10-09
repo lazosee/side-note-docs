@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	interface Props {
 		currentPath?: string;
 	}
 
-	let { currentPath = '/' }: Props = $props();
+	let { currentPath = '/side-notes-docs/' }: Props = $props();
 	let isMobileMenuOpen = $state(false);
 
 	function toggleMenu() {
@@ -18,9 +20,9 @@
 <header class="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/80 backdrop-blur-md transition-colors dark:border-zinc-800 dark:bg-zinc-950/80">
 	<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 		<!-- Brand Logo -->
-		<a href="/" class="flex items-center gap-3 group transition-transform hover:scale-[1.02]" onclick={closeMenu}>
+		<a href="{base}/side-notes-docs/" class="flex items-center gap-3 group transition-transform hover:scale-[1.02]" onclick={closeMenu}>
 			<div class="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-tr from-amber-400 to-amber-200 shadow-sm ring-1 ring-amber-500/20">
-				<img src="/icon.png" alt="SideNote Logo" class="h-8 w-8 object-contain" />
+				<img src="{base}/icon.png" alt="SideNote Logo" class="h-8 w-8 object-contain" />
 			</div>
 			<div>
 				<span class="text-lg font-bold tracking-tight text-zinc-900 dark:text-white">SideNote</span>
@@ -30,11 +32,11 @@
 
 		<!-- Desktop Navigation -->
 		<nav class="hidden md:flex items-center gap-7 text-sm font-medium text-zinc-600 dark:text-zinc-300">
-			<a href="/#features" class="transition-colors hover:text-zinc-950 dark:hover:text-white">Features</a>
-			<a href="/#how-it-works" class="transition-colors hover:text-zinc-950 dark:hover:text-white">How It Works</a>
-			<a href="/#permissions" class="transition-colors hover:text-zinc-950 dark:hover:text-white">Security & Permissions</a>
-			<a href="/privacy" class="transition-colors hover:text-zinc-950 dark:hover:text-white {currentPath === '/privacy' ? 'text-blue-600 dark:text-blue-400 font-semibold' : ''}">Privacy Policy</a>
-			<a href="/terms" class="transition-colors hover:text-zinc-950 dark:hover:text-white {currentPath === '/terms' ? 'text-blue-600 dark:text-blue-400 font-semibold' : ''}">Terms of Service</a>
+			<a href="{base}/#features" class="transition-colors hover:text-zinc-950 dark:hover:text-white">Features</a>
+			<a href="{base}/#how-it-works" class="transition-colors hover:text-zinc-950 dark:hover:text-white">How It Works</a>
+			<a href="{base}/#permissions" class="transition-colors hover:text-zinc-950 dark:hover:text-white">Security & Permissions</a>
+			<a href="{base}/privacy" class="transition-colors hover:text-zinc-950 dark:hover:text-white {currentPath.endsWith('/privacy') ? 'text-blue-600 dark:text-blue-400 font-semibold' : ''}">Privacy Policy</a>
+			<a href="{base}/terms" class="transition-colors hover:text-zinc-950 dark:hover:text-white {currentPath.endsWith('/terms') ? 'text-blue-600 dark:text-blue-400 font-semibold' : ''}">Terms of Service</a>
 		</nav>
 
 		<!-- Right Action Buttons -->
@@ -52,7 +54,7 @@
 			</a>
 
 			<a
-				href="/#install"
+				href="{base}/#install"
 				class="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-zinc-800 hover:shadow active:scale-95 dark:bg-amber-400 dark:text-zinc-950 dark:hover:bg-amber-300"
 			>
 				<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -83,14 +85,14 @@
 	{#if isMobileMenuOpen}
 		<div class="border-b border-zinc-200 bg-white/95 px-4 pt-2 pb-6 backdrop-blur-md md:hidden dark:border-zinc-800 dark:bg-zinc-950/95">
 			<div class="flex flex-col space-y-3 text-sm font-medium">
-				<a href="/#features" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Features</a>
-				<a href="/#how-it-works" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>How It Works</a>
-				<a href="/#permissions" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Security & Permissions</a>
-				<a href="/privacy" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Privacy Policy</a>
-				<a href="/terms" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Terms of Service</a>
+				<a href="{base}/#features" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Features</a>
+				<a href="{base}/#how-it-works" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>How It Works</a>
+				<a href="{base}/#permissions" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Security & Permissions</a>
+				<a href="{base}/privacy" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Privacy Policy</a>
+				<a href="{base}/terms" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Terms of Service</a>
 				<div class="pt-2">
 					<a
-						href="/#install"
+						href="{base}/#install"
 						class="flex w-full items-center justify-center gap-2 rounded-xl bg-zinc-900 py-2.5 text-sm font-semibold text-white shadow-sm dark:bg-amber-400 dark:text-zinc-950"
 						onclick={closeMenu}
 					>

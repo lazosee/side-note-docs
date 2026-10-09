@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { base } from '$app/paths';
+</script>
+
 <footer class="mt-auto border-t border-zinc-200/80 bg-zinc-50/70 text-zinc-600 dark:border-zinc-800/80 dark:bg-zinc-950/70 dark:text-zinc-400">
 	<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-4">
@@ -5,7 +9,7 @@
 			<div class="md:col-span-1">
 				<div class="flex items-center gap-2.5">
 					<div class="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-400/20 ring-1 ring-amber-500/30">
-						<img src="/icon.png" alt="SideNote Logo" class="h-6 w-6 object-contain" />
+						<img src="{base}/icon.png" alt="SideNote Logo" class="h-6 w-6 object-contain" />
 					</div>
 					<span class="text-base font-bold text-zinc-900 dark:text-white">SideNote</span>
 				</div>
@@ -22,11 +26,11 @@
 			<div>
 				<h3 class="text-xs font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-200">Product</h3>
 				<ul class="mt-3 space-y-2 text-xs">
-					<li><a href="/#features" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Key Features</a></li>
-					<li><a href="/#how-it-works" class="hover:text-zinc-900 dark:hover:text-white transition-colors">How It Works</a></li>
-					<li><a href="/#demo" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Interactive Demo</a></li>
-					<li><a href="/#permissions" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Permissions Breakdown</a></li>
-					<li><a href="/#faq" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Frequently Asked Questions</a></li>
+					<li><a href="{base}/#features" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Key Features</a></li>
+					<li><a href="{base}/#how-it-works" class="hover:text-zinc-900 dark:hover:text-white transition-colors">How It Works</a></li>
+					<li><a href="{base}/#demo" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Interactive Demo</a></li>
+					<li><a href="{base}/#permissions" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Permissions Breakdown</a></li>
+					<li><a href="{base}/#faq" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Frequently Asked Questions</a></li>
 				</ul>
 			</div>
 
@@ -34,11 +38,11 @@
 			<div>
 				<h3 class="text-xs font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-200">Legal & Privacy</h3>
 				<ul class="mt-3 space-y-2 text-xs">
-					<li><a href="/privacy" class="hover:text-zinc-900 dark:hover:text-white transition-colors font-medium">Privacy Policy (Exhaustive)</a></li>
-					<li><a href="/terms" class="hover:text-zinc-900 dark:hover:text-white transition-colors font-medium">Terms of Service</a></li>
-					<li><a href="/privacy#chrome-webstore" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Chrome Web Store Compliance</a></li>
-					<li><a href="/privacy#data-collection" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Data Collection & Storage</a></li>
-					<li><a href="/privacy#user-rights" class="hover:text-zinc-900 dark:hover:text-white transition-colors">User Rights & Data Erasure</a></li>
+					<li><a href="{base}/privacy" class="hover:text-zinc-900 dark:hover:text-white transition-colors font-medium">Privacy Policy (Exhaustive)</a></li>
+					<li><a href="{base}/terms" class="hover:text-zinc-900 dark:hover:text-white transition-colors font-medium">Terms of Service</a></li>
+					<li><a href="{base}/privacy#chrome-webstore" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Chrome Web Store Compliance</a></li>
+					<li><a href="{base}/privacy#data-collection" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Data Collection & Storage</a></li>
+					<li><a href="{base}/privacy#user-rights" class="hover:text-zinc-900 dark:hover:text-white transition-colors">User Rights & Data Erasure</a></li>
 				</ul>
 			</div>
 
