@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@layer base {
+	:root {
+		--font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+		--color-keep-sand: #fef08a;
+		--color-keep-sand-border: #ca8a04;
+		--color-keep-mint: #a2f5ab;
+		--color-keep-mint-border: #146c2e;
+		--color-keep-storm: #d3e3fd;
+		--color-keep-storm-border: #0b57d0;
+		--color-keep-coral: #f9dedc;
+		--color-keep-coral-border: #b3261e;
+		--color-keep-dusk: #ede7f6;
+		--color-keep-dusk-border: #6750a4;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		font-family: var(--font-sans);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+/* Custom subtle glassmorphism & card styles */
+.glass-panel {
+	background: rgba(255, 255, 255, 0.78);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-panel {
+	background: rgba(23, 23, 28, 0.82);
+	border: 1px solid rgba(63, 63, 70, 0.5);
+}
+
+/* Expressive pulse and wave animation */
+@keyframes wave-bar {
+	0%, 100% { height: 6px; }
+	50% { height: 26px; }
+}
+
+.animate-wave-1 { animation: wave-bar 1.1s ease-in-out infinite 0.1s; }
+.animate-wave-2 { animation: wave-bar 1.1s ease-in-out infinite 0.25s; }
+.animate-wave-3 { animation: wave-bar 1.1s ease-in-out infinite 0.4s; }
+.animate-wave-4 { animation: wave-bar 1.1s ease-in-out infinite 0.15s; }
+.animate-wave-5 { animation: wave-bar 1.1s ease-in-out infinite 0.35s; }
