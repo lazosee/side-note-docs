@@ -1,11 +1,10 @@
 <script lang="ts">
 	import './layout.css';
+	import {base} from "#lib";
 	import Navbar from '#lib/components/Navbar.svelte';
 	import Footer from '#lib/components/Footer.svelte';
 	import { page } from '$app/state';
 	import type { LayoutProps } from './$types';
-
-	const base = "/side-notes-docs/"
 
 	let { children }: LayoutProps = $props();
 </script>

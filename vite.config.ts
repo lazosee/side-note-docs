@@ -4,7 +4,10 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 const envBasePath = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env?.BASE_PATH;
-const basePath = envBasePath && envBasePath.startsWith('/') ? (envBasePath as `/${string}`) : '';
+const isProd = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env?.NODE_ENV === 'production';
+const basePath = envBasePath && envBasePath.startsWith('/')
+	? (envBasePath as `/${string}`)
+	: (isProd ? '/side-note-docs' : '');
 
 export default defineConfig({
 	plugins: [

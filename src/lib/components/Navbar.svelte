@@ -1,11 +1,11 @@
 <script lang="ts">
+	import { base } from '#lib';
+
 	interface Props {
 		currentPath?: string;
 	}
 
-	const base = "/side-notes-docs/"
-
-	let { currentPath = '/side-notes-docs/' }: Props = $props();
+	let { currentPath = '/' }: Props = $props();
 	let isMobileMenuOpen = $state(false);
 
 	function toggleMenu() {

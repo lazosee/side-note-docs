@@ -1,4 +1,5 @@
 <script lang="ts">
+	import {base} from "#lib";
 	import KeepDemo from '#lib/components/KeepDemo.svelte';
 
 	let activeFaqIndex = $state<number | null>(null);
@@ -6,8 +7,6 @@
 	function toggleFaq(index: number) {
 		activeFaqIndex = activeFaqIndex === index ? null : index;
 	}
-
-	const base = "/side-notes-docs/"
 
 	const faqs = [
 		{

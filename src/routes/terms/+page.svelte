@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { base } from '#lib';
+</script>
+
 <svelte:head>
 	<title>Terms of Service — SideNote Chrome Extension</title>
 	<meta name="description" content="Exhaustive Terms of Service for SideNote Chrome Extension. Details licensing, user content ownership, local storage responsibilities, and billing terms." />
@@ -28,7 +32,7 @@
 		<section>
 			<h2 class="text-xl font-bold text-zinc-950 dark:text-white">1. Acceptance of Terms</h2>
 			<p class="mt-3">
-				These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "you", or "your") and the operators and contributors of <strong>SideNote</strong> ("SideNote", "we", "us", or "our"). By downloading, installing, accessing, or using the SideNote Chrome Extension or visiting this website, you confirm that you have read, understood, and agreed to be bound by these Terms and our accompanying <a href="/privacy" class="text-blue-600 underline dark:text-blue-400">Privacy Policy</a>.
+				These Terms of Service ("Terms") constitute a legally binding agreement between you ("User", "you", or "your") and the operators and contributors of <strong>SideNote</strong> ("SideNote", "we", "us", or "our"). By downloading, installing, accessing, or using the SideNote Chrome Extension or visiting this website, you confirm that you have read, understood, and agreed to be bound by these Terms and our accompanying <a href="{base}/privacy" class="text-blue-600 underline dark:text-blue-400">Privacy Policy</a>.
 			</p>
 			<p class="mt-3">
 				If you do not agree with any part of these Terms, you must immediately cease using SideNote and remove the extension from your browser.

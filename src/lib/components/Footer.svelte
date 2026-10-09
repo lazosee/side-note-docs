@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { base } from '#lib';
 </script>
 
 <footer class="mt-auto border-t border-zinc-200/80 bg-zinc-50/70 text-zinc-600 dark:border-zinc-800/80 dark:bg-zinc-950/70 dark:text-zinc-400">
