@@ -34,6 +34,7 @@
 		<nav class="hidden md:flex items-center gap-7 text-sm font-medium text-zinc-600 dark:text-zinc-300">
 			<a href="{base}/#features" class="transition-colors hover:text-zinc-950 dark:hover:text-white">Features</a>
 			<a href="{base}/#how-it-works" class="transition-colors hover:text-zinc-950 dark:hover:text-white">How It Works</a>
+			<a href="{base}/#pricing" class="transition-colors hover:text-zinc-950 dark:hover:text-white">Pricing</a>
 			<a href="{base}/#permissions" class="transition-colors hover:text-zinc-950 dark:hover:text-white">Security & Permissions</a>
 			<a href="{base}/privacy" class="transition-colors hover:text-zinc-950 dark:hover:text-white {currentPath.endsWith('/privacy') ? 'text-blue-600 dark:text-blue-400 font-semibold' : ''}">Privacy Policy</a>
 			<a href="{base}/terms" class="transition-colors hover:text-zinc-950 dark:hover:text-white {currentPath.endsWith('/terms') ? 'text-blue-600 dark:text-blue-400 font-semibold' : ''}">Terms of Service</a>
@@ -87,6 +88,7 @@
 			<div class="flex flex-col space-y-3 text-sm font-medium">
 				<a href="{base}/#features" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Features</a>
 				<a href="{base}/#how-it-works" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>How It Works</a>
+				<a href="{base}/#pricing" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Pricing</a>
 				<a href="{base}/#permissions" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Security & Permissions</a>
 				<a href="{base}/privacy" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Privacy Policy</a>
 				<a href="{base}/terms" class="px-2 py-1.5 text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" onclick={closeMenu}>Terms of Service</a>

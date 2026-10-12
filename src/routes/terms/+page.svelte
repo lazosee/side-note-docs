@@ -55,6 +55,9 @@
                 </li>
 				<li><strong>Voice Memo Recording & Playback:</strong> In-browser audio recording utilizing the Web Audio API (<code class="rounded bg-zinc-100 px-1 py-0.5 dark:bg-zinc-800">getUserMedia</code>) with integrated waveform visualization and local playback.</li>
 				<li><strong>All-Notes Masonry Dashboard (<code class="rounded bg-zinc-100 px-1 py-0.5 dark:bg-zinc-800">all-notes.html</code>):</strong> A multi-column visual manager for searching, filtering, and organizing notes across all visited domains.</li>
+				<li><strong>Universal Note Exports (Pro):</strong> Exporting notes into Markdown (.md), clean HTML, CSV, or structured JSON formats for interoperability with external knowledge tools.</li>
+				<li><strong>Full Data Backup & Restore (Pro):</strong> Creating and downloading complete JSON backups of all stored notes, audio attachments, and configuration metadata.</li>
+				<li><strong>Google Identity & Customer Portal:</strong> Optional Google OAuth2 sign-in to link Pro licenses and direct access to the Polar Customer Portal for subscription management.</li>
 				<li><strong>Settings & Diagnostics (<code class="rounded bg-zinc-100 px-1 py-0.5 dark:bg-zinc-800">settings.html</code>):</strong> Microphone diagnostics, storage quota metrics, and personalization preferences.</li>
 			</ul>
 		</section>
@@ -134,17 +137,29 @@
 			</div>
 		</section>
 
-		<!-- 7. Free Software — No Subscriptions or Monetization -->
+		<!-- 7. Subscriptions, Lifetime Licenses & Payment Terms -->
 		<section>
-			<h2 class="text-xl font-bold text-zinc-950 dark:text-white">7. Free Software — No Subscriptions or Monetization</h2>
+			<h2 class="text-xl font-bold text-zinc-950 dark:text-white">7. Subscriptions, Lifetime Licenses & Polar Billing</h2>
 			<p class="mt-3">
-				SideNote is provided to you 100% free of charge:
+				SideNote provides free local note-taking functionality alongside optional paid upgrade tiers (Pro Monthly, Pro Annual, Lifetime License) that unlock universal exports and data backup capabilities:
 			</p>
-			<ul class="mt-3 list-disc list-inside space-y-2 text-xs">
-				<li><strong>No Fees or Subscriptions:</strong> There are no subscription fees, paid tiers, in-app purchases, recurring billing schedules, or payment processing mechanisms.</li>
-				<li><strong>No Account Required:</strong> You do not need to register an account, provide an email address, or submit financial credentials to use any feature of SideNote.</li>
-				<li><strong>No Commercial Monetization:</strong> We do not sell user data, license browsing activity, or partner with advertisers.</li>
-			</ul>
+			<div class="mt-4 space-y-3 text-xs leading-relaxed">
+				<p>
+					<strong>• Free Tier:</strong> Core features including side panel notes, TipTap rich text, Google Keep tonal colors, up to 10 audio memos per note, and the All-Notes dashboard are free without fees or mandatory account creation.
+				</p>
+				<p>
+					<strong>• Paid Upgrade Plans:</strong> Users may purchase a Pro Monthly subscription ($3.99/month), Pro Annual subscription ($29.99/year), or Lifetime License ($49.99 one-time). Pricing is inclusive of applicable taxes unless specified otherwise at checkout.
+				</p>
+				<p>
+					<strong>• Merchant of Record & Payment Processing:</strong> All billing, invoicing, taxation, and checkout workflows are operated by our Merchant of Record, <strong>Polar</strong> (<a href="https://polar.sh" target="_blank" rel="noreferrer" class="text-blue-600 underline dark:text-blue-400">polar.sh</a>). By initiating a transaction, you agree to Polar's terms and privacy policies. SideNote does not store or process your credit card numbers.
+				</p>
+				<p>
+					<strong>• Automatic Renewal:</strong> Monthly and Annual subscriptions renew automatically at the expiration of each billing cycle unless cancelled prior to the renewal date. Lifetime Licenses represent a single one-time payment with no recurring charges.
+				</p>
+				<p>
+					<strong>• Cancellation & Self-Service Portal:</strong> You may cancel recurring subscriptions at any time via the Polar Customer Portal, accessible directly from the extension user menu or settings. Upon cancellation, your Pro access continues through the conclusion of your active billing period, after which your account reverts to the Free tier with no loss of local notes.
+				</p>
+			</div>
 		</section>
 
 		<!-- 8. Disclaimers of Warranties -->

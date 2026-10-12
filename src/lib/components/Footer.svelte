@@ -28,6 +28,7 @@
 				<ul class="mt-3 space-y-2 text-xs">
 					<li><a href="{base}/#features" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Key Features</a></li>
 					<li><a href="{base}/#how-it-works" class="hover:text-zinc-900 dark:hover:text-white transition-colors">How It Works</a></li>
+					<li><a href="{base}/#pricing" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Pricing & Plans</a></li>
 					<li><a href="{base}/#demo" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Interactive Demo</a></li>
 					<li><a href="{base}/#permissions" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Permissions Breakdown</a></li>
 					<li><a href="{base}/#faq" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Frequently Asked Questions</a></li>

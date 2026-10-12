@@ -11,27 +11,31 @@
 	const faqs = [
 		{
 			q: 'Does SideNote send my notes, quotes, or voice recordings to any remote server?',
-			a: 'No. SideNote is designed with a strict local-first architecture. All your notes, captured quotes, and voice recordings are stored exclusively inside your browser using Chrome’s native `chrome.storage.local`. We do not operate tracking servers, analytics databases, or advertising networks.'
+			a: 'No. SideNote is built on an uncompromising local-first architecture. All your notes, captured text, images, and voice recordings are stored exclusively inside your browser using Chrome’s native `chrome.storage.local`. We do not operate tracking databases, telemetry servers, or advertising networks.'
+		},
+		{
+			q: 'Is SideNote free to use, and what are the Pro plans?',
+			a: 'SideNote has a generous Free tier that is 100% functional for local note-taking, rich text editing, audio memos, and domain-based browsing. For power users who need Universal Note Exports (Markdown, HTML, CSV, JSON) and full data backup downloads, we offer Pro Monthly ($3.99/mo), Pro Annual ($29.99/yr — Best Value), and a Lifetime License ($49.99 one-time). All payments are securely processed by Polar (polar.sh).'
+		},
+		{
+			q: 'Is Google Sign-In required to take notes?',
+			a: 'No, sign-in is completely optional! You can use SideNote 100% anonymously and offline without ever signing in. Signing in with Google simply allows you to display your profile avatar and automatically link your Polar Pro or Lifetime subscription across devices without dealing with license keys.'
 		},
 		{
 			q: 'How does SideNote associate notes with the websites I visit?',
-			a: 'SideNote uses Chrome’s native tabs permission to inspect the URL and title of your active tab. Notes are partitioned by domain in your browser’s local storage (chrome.storage.local), so whenever you return to a page, your notes are waiting right where you left them.'
+			a: 'SideNote uses Chrome’s native tabs permission to inspect the URL and title of your active tab. Notes are partitioned by domain in your browser’s local storage (`chrome.storage.local`), so whenever you return to a page, your notes are waiting right where you left them.'
 		},
 		{
 			q: 'How does voice memo recording work, and does it listen in the background?',
-			a: 'SideNote only activates your microphone when you explicitly click the "Record Memo" button in the sidepanel or test it in Settings. Audio is processed via your browser’s standard Web Audio API (`navigator.mediaDevices.getUserMedia`) and stored as a base64 audio data URL directly on your device. It never listens in the background, and audio is never uploaded to any external server.'
+			a: 'SideNote only activates your microphone when you explicitly click the "Record Memo" button in the sidepanel or test it in Settings. Audio is processed via your browser’s standard Web Audio API (`navigator.mediaDevices.getUserMedia`) and stored as an audio data URL directly on your device. It never listens in the background, and audio is never uploaded to any external server.'
 		},
 		{
-			q: 'Where are my notes and audio recordings saved?',
-			a: 'All notes and voice memos are stored strictly on your local computer using Chrome’s native `chrome.storage.local`. Nothing is uploaded to external servers, and no sign-in or user registration is required.'
+			q: 'How do I manage or cancel my Pro subscription?',
+			a: 'You can manage your subscription at any time directly through the Polar Customer Portal. Click on your profile avatar in the extension header or open Settings and select "Manage Subscription" to view invoices, update payment methods, or cancel recurring billing with a single click.'
 		},
 		{
 			q: 'What browser versions are required for SideNote?',
 			a: 'SideNote requires Google Chrome version 114 or newer (or compatible Chromium browsers like Brave, Edge, or Opera) that support the native Chrome Side Panel API (`chrome.sidePanel`).'
-		},
-		{
-			q: 'Is SideNote free to use?',
-			a: 'Yes. SideNote is 100% free with no paid subscriptions, no monetization, no hidden paywalls, no ads, and no account registration.'
 		}
 	];
 </script>
@@ -50,7 +54,7 @@
 			<!-- Trust Badge -->
 			<div class="inline-flex items-center gap-2 rounded-full border border-amber-300/80 bg-amber-50/90 px-4 py-1.5 text-xs font-semibold text-amber-900 shadow-sm backdrop-blur-sm dark:border-amber-700/60 dark:bg-amber-950/60 dark:text-amber-300">
 				<span class="flex h-2 w-2 rounded-full bg-amber-500 animate-pulse"></span>
-				<span>100% Free Forever • Local-First • Zero Cloud Tracking</span>
+				<span>Local-First Architecture • Google Identity • Zero Cloud Tracking</span>
 			</div>
 
 			<!-- Main Title -->
@@ -61,7 +65,7 @@
 
 			<!-- Subtitle -->
 			<p class="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-zinc-600 sm:text-xl dark:text-zinc-300">
-				Stop tab-switching to external note apps. SideNote docks seamlessly into Google Chrome's native side panel, formats notes with Google Keep-inspired pastel palettes, and records voice memos with zero privacy compromises.
+				Stop tab-switching to external note apps. SideNote docks seamlessly into Google Chrome's native side panel, formats notes with Google Keep-inspired pastel palettes, records voice memos with zero privacy compromises, and exports your research universally.
 			</p>
 
 			<!-- Action Buttons -->
@@ -74,6 +78,16 @@
 						<path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
 					</svg>
 					<span>Add to Chrome — It's Free</span>
+				</a>
+
+				<a
+					href="#pricing"
+					class="inline-flex items-center gap-2 rounded-full border border-amber-300/80 bg-amber-50/60 px-6 py-3.5 text-sm font-semibold text-amber-900 shadow-sm transition hover:bg-amber-100/80 hover:border-amber-400 dark:border-amber-700/60 dark:bg-amber-950/40 dark:text-amber-300 dark:hover:bg-amber-950/70"
+				>
+					<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+					</svg>
+					<span>View Pricing & Plans</span>
 				</a>
 
 				<a
@@ -101,7 +115,11 @@
 			<div class="mt-14 flex flex-wrap items-center justify-center gap-6 text-xs text-zinc-500 dark:text-zinc-400">
 				<div class="flex items-center gap-2">
 					<svg class="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-					<span>No account required</span>
+					<span>100% Local-first storage</span>
+				</div>
+				<div class="flex items-center gap-2">
+					<svg class="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+					<span>Optional Google Identity</span>
 				</div>
 				<div class="flex items-center gap-2">
 					<svg class="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -109,11 +127,7 @@
 				</div>
 				<div class="flex items-center gap-2">
 					<svg class="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-					<span>Instant offline storage</span>
-				</div>
-				<div class="flex items-center gap-2">
-					<svg class="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-					<span>100% Free forever</span>
+					<span>Universal Pro Exports</span>
 				</div>
 			</div>
 		</div>
@@ -205,16 +219,16 @@
 					</p>
 				</div>
 
-				<!-- Feature 6: Local-First Sovereignty -->
+				<!-- Feature 6: Pro Universal Exports & Backups -->
 				<div class="rounded-3xl border border-zinc-200/80 bg-white p-7 shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
 					<div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-100 text-teal-700 dark:bg-teal-950/70 dark:text-teal-300">
 						<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
 						</svg>
 					</div>
-					<h3 class="mt-5 text-lg font-bold text-zinc-900 dark:text-white">100% Local-First Privacy</h3>
+					<h3 class="mt-5 text-lg font-bold text-zinc-900 dark:text-white">Universal Exports & Backups</h3>
 					<p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-						Zero external servers, zero ad networks, and zero accounts. Your data stays entirely in your local browser sandbox with total privacy.
+						Seamlessly export research to Markdown (.md), clean HTML, CSV, or structured JSON. Download complete data backups anytime for 100% data portability.
 					</p>
 				</div>
 			</div>
@@ -274,7 +288,261 @@
 	</section>
 
 	<!-- ========================================================================= -->
-	<!-- 4. PERMISSIONS & STORE POLICY SECTION -->
+	<!-- 4. PRICING & PLANS SECTION -->
+	<!-- ========================================================================= -->
+	<section id="pricing" class="border-t border-zinc-200/80 bg-zinc-50/50 py-24 scroll-mt-16 dark:border-zinc-800 dark:bg-zinc-900/30">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+			<div class="text-center max-w-3xl mx-auto">
+				<span class="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-50 px-3.5 py-1 text-xs font-semibold text-amber-900 dark:bg-amber-950/60 dark:text-amber-300">
+					Transparent, Predictable Pricing
+				</span>
+				<h2 class="mt-4 text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-4xl dark:text-white">
+					Simple Plans for Every Web Researcher
+				</h2>
+				<p class="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+					SideNote is completely functional for free with private local-first storage. Upgrade to Pro or Lifetime when you need universal exports, full database backups, and priority power tools.
+				</p>
+			</div>
+
+			<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 items-stretch">
+				<!-- Tier 1: Free Forever -->
+				<div class="flex flex-col justify-between rounded-3xl border border-zinc-200/80 bg-white p-7 shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+					<div>
+						<div class="flex items-center justify-between">
+							<h3 class="text-lg font-bold text-zinc-900 dark:text-white">Free</h3>
+							<span class="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">Starter</span>
+						</div>
+						<p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+							Essential local note-taking for daily reading and research.
+						</p>
+						<div class="mt-6 flex items-baseline gap-1">
+							<span class="text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white">$0</span>
+							<span class="text-xs font-semibold text-zinc-500 dark:text-zinc-400">forever</span>
+						</div>
+						<ul class="mt-8 space-y-3 text-xs text-zinc-600 dark:text-zinc-300">
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Native Chrome side panel dock</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Unlimited local notes & cards</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>TipTap rich text & code blocks</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Google Keep tonal color palettes</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Voice memos (10 clips, 60s max)</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Masonry dashboard & search</span>
+							</li>
+						</ul>
+					</div>
+					<div class="mt-8">
+						<a
+							href="#install"
+							class="block w-full rounded-2xl border border-zinc-200 bg-zinc-50 py-3 text-center text-xs font-bold text-zinc-900 transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
+						>
+							Use Free Forever
+						</a>
+					</div>
+				</div>
+
+				<!-- Tier 2: Pro Monthly -->
+				<div class="flex flex-col justify-between rounded-3xl border border-zinc-200/80 bg-white p-7 shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+					<div>
+						<div class="flex items-center justify-between">
+							<h3 class="text-lg font-bold text-zinc-900 dark:text-white">Pro Monthly</h3>
+							<span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 dark:bg-blue-950 dark:text-blue-300">Flexible</span>
+						</div>
+						<p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+							Month-to-month access to power export tools and backups.
+						</p>
+						<div class="mt-6 flex items-baseline gap-1">
+							<span class="text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white">$3.99</span>
+							<span class="text-xs font-semibold text-zinc-500 dark:text-zinc-400">/ month</span>
+						</div>
+						<ul class="mt-8 space-y-3 text-xs text-zinc-600 dark:text-zinc-300">
+							<li class="flex items-center gap-2.5 font-medium text-zinc-900 dark:text-white">
+								<svg class="h-4 w-4 shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+								<span>Everything in Free</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Universal Exports (MD, HTML, CSV, JSON)</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Full Data Backup & Restore downloads</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Extended voice memo recording</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Polar Customer Portal self-service</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Cancel anytime in 1-click</span>
+							</li>
+						</ul>
+					</div>
+					<div class="mt-8">
+						<a
+							href="#install"
+							class="block w-full rounded-2xl bg-zinc-900 py-3 text-center text-xs font-bold text-white transition hover:bg-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700"
+						>
+							Subscribe Monthly
+						</a>
+					</div>
+				</div>
+
+				<!-- Tier 3: Pro Annual (Best Value) -->
+				<div class="relative flex flex-col justify-between rounded-3xl border-2 border-amber-500 bg-white p-7 shadow-lg dark:border-amber-400 dark:bg-zinc-900">
+					<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 px-3.5 py-1 text-[11px] font-bold text-white shadow-md">
+						Best Value • Save 37%
+					</div>
+					<div>
+						<div class="flex items-center justify-between">
+							<h3 class="text-lg font-bold text-zinc-900 dark:text-white">Pro Annual</h3>
+							<span class="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-900 dark:bg-amber-950 dark:text-amber-300">Annual</span>
+						</div>
+						<p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+							The smart choice for avid learners. ~$2.50/month equivalent.
+						</p>
+						<div class="mt-6 flex items-baseline gap-1">
+							<span class="text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white">$29.99</span>
+							<span class="text-xs font-semibold text-zinc-500 dark:text-zinc-400">/ year</span>
+						</div>
+						<ul class="mt-8 space-y-3 text-xs text-zinc-600 dark:text-zinc-300">
+							<li class="flex items-center gap-2.5 font-medium text-zinc-900 dark:text-white">
+								<svg class="h-4 w-4 shrink-0 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+								<span>All Pro Monthly features</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Save 37% over monthly billing</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Instant Google Identity sync</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Continuous feature updates</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Priority GitHub issue consideration</span>
+							</li>
+						</ul>
+					</div>
+					<div class="mt-8">
+						<a
+							href="#install"
+							class="block w-full rounded-2xl bg-amber-500 py-3 text-center text-xs font-bold text-white shadow-md transition hover:bg-amber-600 active:scale-95 dark:bg-amber-400 dark:text-zinc-950 dark:hover:bg-amber-300"
+						>
+							Upgrade Annually
+						</a>
+					</div>
+				</div>
+
+				<!-- Tier 4: Lifetime License -->
+				<div class="relative flex flex-col justify-between rounded-3xl border border-purple-200/90 bg-gradient-to-b from-purple-50/40 to-white p-7 shadow-sm transition hover:shadow-md dark:border-purple-800/80 dark:from-purple-950/20 dark:to-zinc-900">
+					<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-purple-600 px-3.5 py-1 text-[11px] font-bold text-white shadow-md">
+						Pay Once • Keep Forever
+					</div>
+					<div>
+						<div class="flex items-center justify-between">
+							<h3 class="text-lg font-bold text-zinc-900 dark:text-white">Lifetime</h3>
+							<span class="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-bold text-purple-900 dark:bg-purple-950 dark:text-purple-300">One-Time</span>
+						</div>
+						<p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+							Single payment. No subscriptions. Permanent Pro access.
+						</p>
+						<div class="mt-6 flex items-baseline gap-1">
+							<span class="text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-white">$49.99</span>
+							<span class="text-xs font-semibold text-zinc-500 dark:text-zinc-400">one-time</span>
+						</div>
+						<ul class="mt-8 space-y-3 text-xs text-zinc-600 dark:text-zinc-300">
+							<li class="flex items-center gap-2.5 font-medium text-zinc-900 dark:text-white">
+								<svg class="h-4 w-4 shrink-0 text-purple-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+								<span>Lifetime Pro access</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>All future updates included</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Unlimited Universal Exports</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Full database backup downloads</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Direct founder & developer support</span>
+							</li>
+							<li class="flex items-center gap-2.5">
+								<svg class="h-4 w-4 shrink-0 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+								<span>Zero recurring fees forever</span>
+							</li>
+						</ul>
+					</div>
+					<div class="mt-8">
+						<a
+							href="#install"
+							class="block w-full rounded-2xl bg-purple-700 py-3 text-center text-xs font-bold text-white transition hover:bg-purple-800 dark:bg-purple-600 dark:hover:bg-purple-500"
+						>
+							Get Lifetime License
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Trust & Billing Guarantee -->
+			<div class="mt-14 rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 text-xs text-zinc-600 dark:text-zinc-400">
+				<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+					<div class="flex items-start gap-3">
+						<svg class="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+						<div>
+							<strong class="text-zinc-900 dark:text-white block font-semibold">Secure Checkout via Polar</strong>
+							<span>Encrypted payments processed by Polar (polar.sh). We never receive, process, or store credit card details.</span>
+						</div>
+					</div>
+					<div class="flex items-start gap-3">
+						<svg class="h-5 w-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+						<div>
+							<strong class="text-zinc-900 dark:text-white block font-semibold">Self-Service Customer Portal</strong>
+							<span>Manage payment methods, download official invoices, or cancel subscriptions at any time with zero friction.</span>
+						</div>
+					</div>
+					<div class="flex items-start gap-3">
+						<svg class="h-5 w-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+						<div>
+							<strong class="text-zinc-900 dark:text-white block font-semibold">Local-First Guarantee</strong>
+							<span>Your notes and recordings will never be held hostage. Free features and offline notes remain yours forever.</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ========================================================================= -->
+	<!-- 5. PERMISSIONS & STORE POLICY SECTION -->
 	<!-- ========================================================================= -->
 	<section id="permissions" class="border-t border-zinc-200/80 bg-zinc-50/70 py-24 scroll-mt-16 dark:border-zinc-800 dark:bg-zinc-900/40">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -322,7 +590,17 @@
 						</div>
 					</div>
 
-					<!-- Perm 4: alarms -->
+					<!-- Perm 4: identity -->
+					<div class="grid grid-cols-1 gap-4 p-5 sm:grid-cols-12 sm:items-center">
+						<div class="sm:col-span-4 font-mono font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+							<span class="rounded bg-zinc-100 px-2 py-0.5 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">identity</span>
+						</div>
+						<div class="sm:col-span-8 text-zinc-600 dark:text-zinc-300 leading-relaxed">
+							Enables optional Google OAuth2 Sign-In in a focused window to link your Google profile and activate Polar Pro subscriptions seamlessly. Never accesses Gmail, Drive, or contacts.
+						</div>
+					</div>
+
+					<!-- Perm 5: alarms -->
 					<div class="grid grid-cols-1 gap-4 p-5 sm:grid-cols-12 sm:items-center">
 						<div class="sm:col-span-4 font-mono font-bold text-zinc-900 dark:text-white flex items-center gap-2">
 							<span class="rounded bg-zinc-100 px-2 py-0.5 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">alarms</span>
@@ -332,7 +610,7 @@
 						</div>
 					</div>
 
-					<!-- Perm 5: microphone -->
+					<!-- Perm 6: microphone -->
 					<div class="grid grid-cols-1 gap-4 p-5 sm:grid-cols-12 sm:items-center">
 						<div class="sm:col-span-4 font-mono font-bold text-zinc-900 dark:text-white flex items-center gap-2">
 							<span class="rounded bg-zinc-100 px-2 py-0.5 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">Microphone (Web Audio)</span>
@@ -368,7 +646,7 @@
 				</h2>
 
 				<p class="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-zinc-600 sm:text-base dark:text-zinc-300">
-					Add SideNote to Google Chrome in seconds. 100% free, no login required, zero remote tracking.
+					Add SideNote to Google Chrome in seconds. 100% functional free tier, optional Google login, zero remote tracking.
 				</p>
 
 				<div class="mt-8 flex flex-wrap items-center justify-center gap-4">

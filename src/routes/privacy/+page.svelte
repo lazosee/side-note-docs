@@ -103,10 +103,17 @@
 							</td>
 						</tr>
 						<tr>
+							<td class="p-3.5 font-mono font-bold text-blue-600 dark:text-blue-400">identity</td>
+							<td class="p-3.5 font-medium">Google OAuth2</td>
+							<td class="p-3.5">
+								Used strictly when you optionally choose to sign in with Google in the extension. Enables verifying user identity, displaying your profile avatar in the navigation bar, and automatically linking Polar Pro or Lifetime subscription entitlements. Never accesses Gmail, Drive, or contacts.
+							</td>
+						</tr>
+						<tr>
 							<td class="p-3.5 font-mono font-bold text-blue-600 dark:text-blue-400">alarms</td>
 							<td class="p-3.5 font-medium">Task Scheduler</td>
 							<td class="p-3.5">
-								Used to run scheduled lightweight cleanup routines without keeping the background service worker persistently active in memory.
+								Used to run scheduled lightweight cleanup routines and periodic entitlement synchronization without keeping the background service worker persistently active in memory.
 							</td>
 						</tr>
 						<tr>
@@ -148,13 +155,21 @@
 							<li>User preference configurations (audio quality, defaults)</li>
 						</ul>
 					</div>
+					<div class="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 sm:col-span-2">
+						<h3 class="font-bold text-zinc-900 dark:text-white">Optional Identity & Subscription Data</h3>
+						<ul class="mt-2 list-disc list-inside space-y-1 text-xs text-zinc-600 dark:text-zinc-400">
+							<li><strong>Google Profile (Optional):</strong> If you choose to sign in, your display name, email address, and avatar image URL are used strictly for user identification and profile menu rendering.</li>
+							<li><strong>Subscription Entitlement:</strong> Verification metadata (such as <code>isPro</code>, license state, or subscription identifier) is cached in <code class="rounded bg-zinc-100 px-1 py-0.5 dark:bg-zinc-800">chrome.storage.local</code> to unlock Pro exports and backups.</li>
+							<li><strong>Payment Card Data:</strong> Processed exclusively by Polar (<a href="https://polar.sh" target="_blank" rel="noreferrer" class="text-blue-600 underline dark:text-blue-400">polar.sh</a>). SideNote never collects, handles, or stores credit cards or financial accounts.</li>
+						</ul>
+					</div>
 				</div>
 
 				<p class="font-semibold text-zinc-900 dark:text-white mt-4">
 					Where is this data stored?
 				</p>
 				<p>
-					100% of the above data is stored exclusively in your browser profile directory using <code class="rounded bg-zinc-100 px-1 py-0.5 text-xs dark:bg-zinc-800">chrome.storage.local</code>. It is partitioned by hostname (for example: <code class="rounded bg-zinc-100 px-1 py-0.5 text-xs dark:bg-zinc-800">&#123; "github.com": [Note, Note] &#125;</code>). It is never sent to our servers, never synchronized without your knowledge, and never shared with third parties.
+					100% of your notes and audio recordings are stored exclusively in your browser profile directory using <code class="rounded bg-zinc-100 px-1 py-0.5 text-xs dark:bg-zinc-800">chrome.storage.local</code>. It is partitioned by hostname (for example: <code class="rounded bg-zinc-100 px-1 py-0.5 text-xs dark:bg-zinc-800">&#123; "github.com": [Note, Note] &#125;</code>). It is never sent to our servers, never synchronized without your knowledge, and never shared with third parties.
 				</p>
 			</div>
 		</section>
@@ -196,16 +211,17 @@
 			</ul>
 		</section>
 
-		<!-- 7. No Monetization, No Payments & No Account Registration -->
+		<!-- 7. Monetization, Subscriptions & Payment Processing via Polar -->
 		<section>
-			<h2 class="text-xl font-bold text-zinc-950 dark:text-white">7. No Monetization, No Payments & No Account Registration</h2>
+			<h2 class="text-xl font-bold text-zinc-950 dark:text-white">7. Monetization, Subscriptions & Polar Billing</h2>
 			<p class="mt-3">
-				SideNote is completely free software. It does not incorporate any paid tiers, subscriptions, paywalls, or payment processors:
+				SideNote provides a generous, fully-functional free tier for local note-taking alongside optional premium tiers (Pro Monthly, Pro Annual, Lifetime License) for advanced export and backup tools:
 			</p>
 			<ul class="mt-3 list-disc list-inside space-y-2 text-xs">
-				<li><strong>Zero Payment Collection:</strong> We do NOT collect or store credit card numbers, bank accounts, billing addresses, or financial records. SideNote has no commercial transactions.</li>
-				<li><strong>No Account or Sign-In:</strong> You do not need to register an account, log in, or provide an email address or password to use any feature of SideNote.</li>
-				<li><strong>No Commercial Monetization:</strong> We do not sell user data, license browsing activity, or partner with advertisers.</li>
+				<li><strong>Secure Merchant of Record:</strong> All subscription and lifetime payments are processed by <strong>Polar</strong> (<a href="https://polar.sh" target="_blank" rel="noreferrer" class="text-blue-600 underline dark:text-blue-400">polar.sh</a>), our compliant payment infrastructure provider. Polar handles card encryption, tax compliance, and billing management.</li>
+				<li><strong>Zero Financial Data Stored by SideNote:</strong> We do NOT collect, process, or store credit card numbers, CVVs, expiration dates, or bank routing details. All sensitive financial transactions occur securely within Polar's PCI-DSS compliant checkout session.</li>
+				<li><strong>Optional Google Sign-In:</strong> Registering or signing in with Google is completely optional. You can use SideNote offline and anonymously without an account. Signing in is only utilized to associate your Pro subscription and customer portal across devices.</li>
+				<li><strong>No Advertising or Data Monetization:</strong> We never sell your personal data, monetize browsing habits, inject sponsored notes, or serve third-party ads.</li>
 			</ul>
 		</section>
 
@@ -222,6 +238,9 @@
 				</p>
 				<p>
 					<strong>• Complete Data Erasure:</strong> Click <em>Clear All Notes & Data</em> in Settings to instantly wipe all extension data from <code class="rounded bg-zinc-100 px-1 py-0.5 dark:bg-zinc-800">chrome.storage.local</code>.
+				</p>
+				<p>
+					<strong>• Subscription & Billing Cancellation:</strong> If you subscribed to Pro, you can manage billing methods, retrieve receipts, or cancel future renewals at any time directly through the Polar Customer Portal accessible from the extension user menu.
 				</p>
 				<p>
 					<strong>• Uninstallation:</strong> Removing the SideNote extension from Chrome immediately and irreversibly deletes all locally cached extension data from your browser profile.
